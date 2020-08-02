@@ -1,24 +1,23 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import { useStoreActions, useStoreState } from '../store'
 
-const Navigation = () => {
+export default function NavigationTop() {
   const user = useStoreState((s) => s.userState.user)
   const logOut = useStoreActions((a) => a.userState.logOut)
 
-  const history = useHistory()
-
   async function _logOut() {
     await logOut()
-    if (!user) history.push('/login')
   }
 
-  return (
+  return !user ? (
+    <Redirect to="/login" />
+  ) : (
     <div>
-      <div onClick={_logOut}>Log Out</div>
+      <div className="cursor-pointer" onClick={_logOut}>
+        Log Out
+      </div>
     </div>
   )
 }
-
-export default Navigation

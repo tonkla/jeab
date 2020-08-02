@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, Sarabun, sans-serif;
+  font-size: 16px;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+._center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._center-x {
+  display: flex;
+  justify-content: center;
+}
+._center-y {
+  display: flex;
+  align-items: center;
+}

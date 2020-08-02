@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 import { useStoreState } from '../store'
 
-const AuthorizedRoute = ({ component: Component, ...rest }: any) => {
+export default function AuthorizedRoute({ component: Component, ...rest }: any) {
   const user = useStoreState((s) => s.userState.user)
   return (
     <Route
@@ -12,5 +12,3 @@ const AuthorizedRoute = ({ component: Component, ...rest }: any) => {
     />
   )
 }
-
-export default AuthorizedRoute

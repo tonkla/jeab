@@ -1,14 +1,16 @@
 import React from 'react'
 
-import Navigation from '../components/Navigation'
+import NavigationLeft from './NavigationLeft'
+import NavigationTop from './NavigationTop'
 
-const Layout = ({ children }: React.ComponentPropsWithoutRef<'div'>) => {
+export default function Layout({ children }: React.ComponentPropsWithoutRef<'div'>) {
   return (
-    <div>
-      <Navigation />
-      <div>{children}</div>
+    <div className="h-screen flex">
+      <NavigationLeft />
+      <div className="h-screen w-full px-6 py-4">
+        <NavigationTop />
+        <div>{children}</div>
+      </div>
     </div>
   )
 }
-
-export default Layout
