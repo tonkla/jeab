@@ -1,8 +1,7 @@
+import { Button, Input } from 'antd'
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { Button, Input } from 'antd'
-
-import { useStoreActions, useStoreState } from '../store'
+import { useStoreActions, useStoreState } from '../../../store'
 
 export default function Login() {
   const user = useStoreState((s) => s.userState.user)

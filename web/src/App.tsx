@@ -1,15 +1,11 @@
-import React, { Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { StoreProvider } from 'easy-peasy'
-
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import AuthorizedRoute from './modules/base/components/AuthorizedRoute'
+import Home from './modules/base/pages/Home'
+import Login from './modules/base/pages/Login'
 import store from './store'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import AuthorizedRoute from './components/AuthorizedRoute'
-
-import 'antd/dist/antd.css'
-import './styles/main.css'
-import './App.css'
+import './styles/global.css'
 
 const POS = lazy(() => import('./modules/pos/Main'))
 const Inventory = lazy(() => import('./modules/inventory/Main'))
