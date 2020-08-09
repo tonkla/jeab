@@ -1,6 +1,5 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-
 import { useStoreActions, useStoreState } from '../../../store'
 
 export default function NavigationTop() {
@@ -14,9 +13,9 @@ export default function NavigationTop() {
   return !user ? (
     <Redirect to="/login" />
   ) : (
-    <div>
+    <div className="px-6 py-2 bg-blue-200 text-right">
       <div className="cursor-pointer" onClick={_logOut}>
-        Log Out
+        Log out
       </div>
     </div>
   )
