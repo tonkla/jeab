@@ -1,5 +1,4 @@
 import { persist } from 'easy-peasy'
-
 import userState, { UserStateModel } from './user'
 
 export interface StoreModel {
@@ -10,7 +9,7 @@ const storeModel: StoreModel = persist(
   { userState },
   {
     storage: 'localStorage',
-    whitelist: ['userState'],
+    allow: ['userState'],
   }
 )
 
